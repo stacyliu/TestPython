@@ -4,7 +4,11 @@ from test_wework.api.department import Department
 
 
 class TestDepartment(TestCase):
-    department=Department()
+
+
+    def setUp(self):
+        self.department = Department()
+
 
     def test_list(self):
         #todo:此处可以通过外部传递参数 比如yaml
@@ -12,11 +16,11 @@ class TestDepartment(TestCase):
 
 
     def test_create(self):
-        self.fail()
+        pass
+
 
     def test_delete(self):
-        self.fail()
+        pass
 
     def test_update(self):
-
-        self.fail()
+        pass

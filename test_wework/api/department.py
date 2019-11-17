@@ -6,10 +6,11 @@ https://qyapi.weixin.qq.com/cgi-bin/department/create?access_token=ACCESS_TOKEN
 import requests
 
 from test_wework.Utils.utils import Utils
+from test_wework.api.BaseApi import BaseApi
 from test_wework.api.wework import WeWork
 
 
-class Department:
+class Department(BaseApi):
     '''
     https://qyapi.weixin.qq.com/cgi-bin/department/list?access_token=ACCESS_TOKEN&id=ID
     https://qyapi.weixin.qq.com/cgi-bin/department/create?access_token=ACCESS_TOKEN
@@ -24,7 +25,7 @@ class Department:
         else:
             params = {'access_token': WeWork.get_accesstoken(),'id':id}
 
-        print(Utils.jsonFormat(requests.request("GET", self.list_url, params=params).json()))
+        self.printResponse(requests.request("GET", self.list_url, params=params).json())
         return(requests.request("GET", self.list_url, params=params).json())
 
     def create(self):
