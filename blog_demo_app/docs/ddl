@@ -1,0 +1,29 @@
+CREATE TABLE `artical` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` text COLLATE utf8mb4_general_ci NOT NULL,
+  `content` text COLLATE utf8mb4_general_ci NOT NULL,
+  `likeCount` int(5) NOT NULL,
+  `readCount` int(8) NOT NULL,
+  `createDate` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
+
+
+CREATE TABLE `comment` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userName` text COLLATE utf8mb4_general_ci NOT NULL,
+  `commentContent` text COLLATE utf8mb4_general_ci NOT NULL,
+  `articalId` int(10) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+
+
+
+CREATE TABLE `users` (
+  `username` tinytext COLLATE utf8mb4_general_ci NOT NULL,
+  `userpswd` tinytext COLLATE utf8mb4_general_ci NOT NULL,
+  `userid` int(11) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`userid`),
+  UNIQUE KEY `userid_UNIQUE` (`userid`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
