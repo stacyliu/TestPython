@@ -25,7 +25,7 @@ class Department(BaseApi):
         else:
             params = {'access_token': WeWork.get_accesstoken(),'id':id}
 
-        self.printResponse(requests.request("GET", self.list_url, params=params).json())
+        self.printResponse(requests.request("GET", self.list_url, params=params,proxies=self.proxies,verify=False).json())
         return(requests.request("GET", self.list_url, params=params).json())
 
     def create(self):
