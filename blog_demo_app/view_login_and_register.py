@@ -32,6 +32,7 @@ def register():
         #如果能找到 就说明已经被注册了
         return '''<a href="/register">该账号已经被注册 点击返回换个账号试试</a>'''
 
+    #注册
     sql = '''insert into users (username, userpswd) values (%s,%s)'''
     cursor.execute(sql, (username, userpswd))
     conn.commit()

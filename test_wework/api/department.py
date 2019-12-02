@@ -21,9 +21,9 @@ class Department(BaseApi):
     list_url="https://qyapi.weixin.qq.com/cgi-bin/department/list"
     def list(self,*id):
         if(id.count==0):
-            params={'access_token':WeWork.get_accesstoken()}
+            params={'access_token':WeWork.get_accesstoken_contact()}
         else:
-            params = {'access_token': WeWork.get_accesstoken(),'id':id}
+            params = {'access_token': WeWork.get_accesstoken_contact(), 'id':id}
 
         self.printResponse(requests.request("GET", self.list_url, params=params,proxies=self.proxies,verify=False).json())
         return(requests.request("GET", self.list_url, params=params).json())
