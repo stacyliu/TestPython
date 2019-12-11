@@ -69,7 +69,7 @@ def login():
     else:#有注册且正确
         session['username'] = username
         session['userid'] = row.get('userid')
-        print("*****"+session['username']+"*****"+str(session['userid']))
+        print("*****"+session['username']+"*****"+(session['userid']))
         return redirect(url_for('pages_blueprint.pages'))
 
 
